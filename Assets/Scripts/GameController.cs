@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeLight : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class CubeLight : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    void TurnOffAllLight()
     {
-        GetComponentInChildren<Light>().gameObject.SetActive(false);
+
     }
 }
