@@ -30,6 +30,6 @@ public class LightCube : MonoBehaviour
     private void turnOffCubeLight()
     {
         lightSource.gameObject.SetActive(false);
-        //emissionSource.DisableKeyword("_EMISSION");
+        emissionSource.DisableKeyword("_EMISSION");
     }
 }
