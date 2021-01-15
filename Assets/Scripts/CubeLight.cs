@@ -19,6 +19,5 @@ public class CubeLight : MonoBehaviour
     private void OnMouseDown()
     {
         GetComponentInChildren<Light>().gameObject.SetActive(false);
-
     }
 }
