@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4290010241139730565}
   - component: {fileID: 4290010241139730566}
   - component: {fileID: 4290010241139730567}
+  - component: {fileID: 6318997261948604565}
   m_Layer: 0
   m_Name: Light Cube
-  m_TagString: Untagged
+  m_TagString: Light Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +95,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6318997261948604565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290010241139730680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55ab7e85d18e49a89d622c940e3837d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPrefab: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
+    type: 3}
+  oldGameObjects: []
+  searchByTag: 
 --- !u!1 &4290010241577226285
 GameObject:
   m_ObjectHideFlags: 0

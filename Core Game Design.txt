@@ -1,0 +1,12 @@
+Player Experience: Quick reactions and confusing game play
+
+Core Mechanic: Tapping the light to turn them off.
+
+Theme: Retro arcade game. Based off the Dave and Busters "Cat Game". 
+
+Core Game Loop: Continuously turn off the light in order to gain a high score.
+
+
+***Note to self***
+- try making middle cube less bright
+- figure out courtine for lights

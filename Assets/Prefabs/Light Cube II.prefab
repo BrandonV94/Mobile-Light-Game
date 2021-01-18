@@ -103,9 +103,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1293716626325729664}
   - component: {fileID: 1507696012}
+  - component: {fileID: 1293315986951979319}
   m_Layer: 0
   m_Name: Light Cube II
-  m_TagString: Untagged
+  m_TagString: Light Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +141,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightSource: {fileID: 2209475494503484430}
+--- !u!135 &1293315986951979319
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317328400776248320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: -0.33}
 --- !u!1 &4691423286318301258
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +198,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.9622972, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

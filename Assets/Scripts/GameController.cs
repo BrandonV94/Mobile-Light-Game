@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject[] cubeArray = null;
+    [SerializeField] float timerDelay = 1f;
+
     void Start()
     {
-        
+        CheckCubeArray();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         
     }
 
-    void TurnOffAllLight()
+    void CheckCubeArray()
     {
+        Debug.Log("Locating all cubes.");
+        cubeArray = GameObject.FindGameObjectsWithTag("Light Cube");
+        foreach (GameObject cube in cubeArray)
+        {
+            Debug.Log(cube.name + " was added to the cubeArray.");
+        }
+    }
 
+    IEnumerator TurnOffCubeLightsSlowly()
+    {
+        //turn cube light.
+        yeild return new WaitForSeconds(timerDelay);
     }
 }
