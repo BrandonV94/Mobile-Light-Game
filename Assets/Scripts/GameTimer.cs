@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class GameTimer : MonoBehaviour
 {
-    [SerializeField] int gameTimer = 60;
+    [SerializeField] GameController gameController = null;
+    [SerializeField] public int countdownTimer = 60;
+
+    private void Awake()
+    {
+        gameController = GetComponent<GameController>();
+    }
 
     void Start()
     {
@@ -13,11 +19,12 @@ public class GameTimer : MonoBehaviour
 
     IEnumerator CountdownTimer()
     {
-        while (gameTimer > 0)
+        while (countdownTimer > 0)
         {
-            Debug.Log(gameTimer);
+            //Debug.Log(countdownTimer);
             yield return new WaitForSeconds(1f);
-            gameTimer--;
+            gameController.TurnRandomCubeLightOn();
+            countdownTimer--;
         }
     }
 }

@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 1731257814}
   - component: {fileID: 1731257815}
   - component: {fileID: 1731257816}
+  - component: {fileID: 1731257817}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -248,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b1a6c6a3ad4401bab4c2d65372ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeLightArray: []
-  turnLightsOnOffSlowlyDelay: 0.1
-  randomDelayTimer: 1
   gameTimer: {fileID: 0}
+  rndCubeGenerator: {fileID: 0}
+  cubeLightArray: []
+  turnLightsOnOffSlowlyDelay: 0.01
 --- !u!114 &1731257816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,12 +260,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731257813}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96cfbd494e4d743ce920805757bbb9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: 60
+  gameController: {fileID: 0}
+  countdownTimer: 10
+--- !u!114 &1731257817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731257813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9418c46b76eeb409c8077fefc082ca55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTimer: {fileID: 0}
+  gameController: {fileID: 0}
+  randomDelayTimer: 0.1
 --- !u!1001 &2052252286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 5495720681012170810, guid: e4a4b7cbc59604dbdb0c49b5066cdaf3,
         type: 3}
       propertyPath: m_Intensity
-      value: 1.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5853863623257958398, guid: e4a4b7cbc59604dbdb0c49b5066cdaf3,
         type: 3}

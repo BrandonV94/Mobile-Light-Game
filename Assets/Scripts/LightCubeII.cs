@@ -22,7 +22,6 @@ public class LightCubeII : MonoBehaviour
     {
         if (isLightCubeOn)
         {
-           //Debug.Log("Turning off " + this.name + ".");
             TurnCubeLightOff();
         }
     }
@@ -49,5 +48,4 @@ public class LightCubeII : MonoBehaviour
             isLightCubeOn = false;
         }
     }
-
 }

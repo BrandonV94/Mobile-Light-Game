@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] GameTimer gameTimer = null;
+    [SerializeField] RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] GameObject[] cubeLightArray = null;
     [SerializeField] float turnLightsOnOffSlowlyDelay = 1f;
-    [SerializeField] float randomDelayTimer = 1f;
-    [SerializeField] GameTimer gameTimer = null;
 
     private void Awake()
     {
         gameTimer = GetComponent<GameTimer>();
+        rndCubeGenerator = GetComponent<RandomCubeGenerator>();
+        TurnOffGameComponentsOnstart();
     }
 
     void Start()
@@ -26,11 +28,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Activating Countdown Clock");
             gameTimer.enabled = true;
-        }
-
-        if(gameTimer.isActiveAndEnabled == true)
-        {
-            TurnRandomCubeLightOn();
+            rndCubeGenerator.enabled = true;
         }
     }
 
@@ -40,12 +38,22 @@ public class GameController : MonoBehaviour
         cubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
     }
 
-    private void TurnRandomCubeLightOn()
+    public void TurnRandomCubeLightOn()
     {
-        int randNum = Random.Range(0, cubeLightArray.Length);
-        var randomCubeLight = cubeLightArray[randNum];
-        Debug.Log(randomCubeLight.transform.parent.name + " is being turned on randomly.");
-        randomCubeLight.SetActive(true);
+        if(cubeLightArray.Length > 0)
+        {
+            int randNum = Random.Range(0, cubeLightArray.Length);
+            Debug.Log("Random number generated: " + randNum);
+            Debug.Log("Random cube being selected is: " + cubeLightArray[randNum]);
+            var randomCubeLight = cubeLightArray[randNum];
+            randomCubeLight.SetActive(true);
+        }
+    }
+
+    void TurnOffGameComponentsOnstart()
+    {
+        gameTimer.enabled = false;
+        rndCubeGenerator.enabled = false;
     }
 
     IEnumerator TurnOffCubeLightsSlowly()
@@ -65,11 +73,5 @@ public class GameController : MonoBehaviour
             cube.SetActive(true);
             yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
         }
-    }
-
-    IEnumerator TurnLightsOnRandomly()
-    {
-        TurnRandomCubeLightOn();
-        yield return new WaitForSeconds(randomDelayTimer);
     }
 }
