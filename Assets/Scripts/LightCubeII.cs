@@ -5,17 +5,12 @@ using UnityEngine;
 public class LightCubeII : MonoBehaviour
 {
     [SerializeField] Light lightSource = null;
-    [SerializeField] bool isLightCubeOn = true;
+    [SerializeField] public bool isLightCubeOn = true;
+    [SerializeField] int timeClicked = 0;
 
-    void Start()
+    void Awake()
     {
-    
-    }
-
-
-    void Update()
-    {
-        
+        lightSource = GetComponentInChildren<Light>();
     }
 
     private void OnMouseDown()
@@ -23,6 +18,7 @@ public class LightCubeII : MonoBehaviour
         if (isLightCubeOn)
         {
             TurnCubeLightOff();
+            timeClicked++;
         }
     }
 
@@ -36,16 +32,5 @@ public class LightCubeII : MonoBehaviour
     {
         lightSource.gameObject.SetActive(true);
         isLightCubeOn = true;
-    }
-
-    void CheckCubeLight() {
-        if (this.gameObject.activeSelf)
-        {
-            isLightCubeOn = true;
-        }
-        else
-        {
-            isLightCubeOn = false;
-        }
     }
 }

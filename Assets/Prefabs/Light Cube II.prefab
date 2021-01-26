@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightSource: {fileID: 2209475494503484430}
-  isLightCubeOn: 1
+  isLightCubeOn: 0
+  timeClicked: 0
 --- !u!135 &1293315986951979319
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -165,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5588581236993777091}
   - component: {fileID: 2209475494503484430}
+  - component: {fileID: 8840781031664580330}
   m_Layer: 0
   m_Name: Light Source II
   m_TagString: Light Source
@@ -247,6 +249,18 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8840781031664580330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691423286318301258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10cf3c58114744bc0b78ae5c04e5cd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5015713952070650228
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKeyDown("s"))
         {
-            Debug.Log("Activating Countdown Clock");
             gameTimer.enabled = true;
             rndCubeGenerator.enabled = true;
         }
@@ -34,7 +33,6 @@ public class GameController : MonoBehaviour
 
     void CreateCubeLightArray()
     {
-        //Debug.Log("Locating all cube lights.");
         cubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
     }
 
@@ -43,10 +41,16 @@ public class GameController : MonoBehaviour
         if(cubeLightArray.Length > 0)
         {
             int randNum = Random.Range(0, cubeLightArray.Length);
-            Debug.Log("Random number generated: " + randNum);
-            Debug.Log("Random cube being selected is: " + cubeLightArray[randNum]);
             var randomCubeLight = cubeLightArray[randNum];
-            randomCubeLight.SetActive(true);
+            if(randomCubeLight.activeInHierarchy == false)
+            {
+                //Debug.Log("Turning on " + randomCubeLight.name + " " + randNum);
+                randomCubeLight.SetActive(true);
+            }
+            else
+            {
+                //Debug.Log(randomCubeLight.name + " " + randNum + " is already on.");
+            }
         }
     }
 
