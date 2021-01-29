@@ -4,32 +4,54 @@ using UnityEngine;
 
 public class LightCube : MonoBehaviour
 {
-    Material emissionSource = null;
+    GameController gameController = null;
     Light lightSource = null;
+    [SerializeField] public bool isLightCubeOn = true;
+    [SerializeField] int timeClicked = 0;
+    [SerializeField] public int pointsPerClick = 100;
 
-    void Start()
+    void Awake()
     {
-        emissionSource = GetComponent<Renderer>().material;
+        gameController = FindObjectOfType<GameController>();
         lightSource = GetComponentInChildren<Light>();
-        emissionSource.EnableKeyword("_EMISSION");
     }
-
 
     void Update()
     {
-        Debug.Log(this.name + " is on: " + emissionSource.IsKeywordEnabled("_Emissions"));
+        CheckCubeLight();
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("Turning off " + this.name + ".");
-        turnOffCubeLight();
-        Debug.Log(this.name + " is on: " + emissionSource.IsKeywordEnabled("_Emissions"));
+        if (isLightCubeOn)
+        {
+            TurnCubeLightOff();
+            timeClicked++;
+            gameController.incrementScore(pointsPerClick);
+        }
     }
 
-    private void turnOffCubeLight()
+    public void TurnCubeLightOff()
     {
         lightSource.gameObject.SetActive(false);
-        emissionSource.DisableKeyword("_EMISSION");
+        isLightCubeOn = false;
+    }
+
+    public void TurnCubeLightOn()
+    {
+        lightSource.gameObject.SetActive(true);
+        isLightCubeOn = true;
+    }
+
+    void CheckCubeLight()
+    {
+        if (lightSource.gameObject.activeSelf == true)
+        {
+            isLightCubeOn = true;
+        }
+        else
+        {
+            isLightCubeOn = false;
+        }
     }
 }

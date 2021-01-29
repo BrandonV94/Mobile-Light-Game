@@ -372,12 +372,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623085907}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709000026
 GameObject:
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 1247247199}
   - component: {fileID: 1247247198}
   - component: {fileID: 1247247197}
+  - component: {fileID: 1247247201}
   m_Layer: 5
   m_Name: Game Canvas
   m_TagString: Untagged
@@ -561,13 +562,26 @@ RectTransform:
   - {fileID: 709000027}
   - {fileID: 1801706069}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1247247201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247247196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee431ec4d58c04b53bdd0fe037641b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1801706070}
 --- !u!1 &1260324346
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.9622642, b: 0.034391224, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -708,7 +722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1731257815
 MonoBehaviour:
@@ -722,10 +736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b1a6c6a3ad4401bab4c2d65372ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: {fileID: 0}
-  rndCubeGenerator: {fileID: 0}
-  cubeLightArray: []
   turnLightsOnOffSlowlyDelay: 0.01
+  totalPoints: 0
 --- !u!114 &1731257816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96cfbd494e4d743ce920805757bbb9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
   countdownTimer: 30
 --- !u!114 &1731257817
 MonoBehaviour:
@@ -752,8 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed62e8bb35a77481d8ad8d2510b051b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: {fileID: 0}
-  gameController: {fileID: 0}
+  cubeLightArray: []
   randomDelayTimer: 2
 --- !u!1 &1801706068
 GameObject:
@@ -965,7 +975,7 @@ PrefabInstance:
     - target: {fileID: 7518705391784637100, guid: e4a4b7cbc59604dbdb0c49b5066cdaf3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7518705391784637100, guid: e4a4b7cbc59604dbdb0c49b5066cdaf3,
         type: 3}

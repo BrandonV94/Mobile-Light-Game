@@ -7,14 +7,15 @@ public class GameController : MonoBehaviour
 {
     GameTimer gameTimer = null;
     RandomCubeGenerator rndCubeGenerator = null;
+    ScoreBoard scoreBoard = null;
     [SerializeField] float turnLightsOnOffSlowlyDelay = 1f;
-    [SerializeField] int totalPoints = 0;
-    [SerializeField] string totalPointsString = null;
+    [SerializeField] public int totalPoints = 0;
 
     private void Awake()
     {
         gameTimer = GetComponent<GameTimer>();
         rndCubeGenerator = GetComponent<RandomCubeGenerator>();
+        scoreBoard = FindObjectOfType<ScoreBoard>();
         TurnOffGameComponentsOnstart();
     }
 
@@ -56,5 +57,11 @@ public class GameController : MonoBehaviour
             cube.SetActive(true);
             yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
         }
+    }
+
+    // Score 
+    public void incrementScore(int pointsPerClick)
+    {
+        totalPoints += pointsPerClick;
     }
 }
