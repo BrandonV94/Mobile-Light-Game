@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] GameTimer gameTimer = null;
-    [SerializeField] RandomCubeGenerator rndCubeGenerator = null;
-    [SerializeField] GameObject[] cubeLightArray = null;
+    GameTimer gameTimer = null;
+    RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] float turnLightsOnOffSlowlyDelay = 1f;
+    [SerializeField] int totalPoints = 0;
+    [SerializeField] string totalPointsString = null;
 
     private void Awake()
     {
@@ -18,7 +20,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        CreateCubeLightArray();
         StartCoroutine("TurnOffCubeLightsSlowly");
     }
 
@@ -31,38 +32,16 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void CreateCubeLightArray()
-    {
-        cubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
-    }
-
-    public void TurnRandomCubeLightOn()
-    {
-        if(cubeLightArray.Length > 0)
-        {
-            int randNum = Random.Range(0, cubeLightArray.Length);
-            var randomCubeLight = cubeLightArray[randNum];
-            if(randomCubeLight.activeInHierarchy == false)
-            {
-                //Debug.Log("Turning on " + randomCubeLight.name + " " + randNum);
-                randomCubeLight.SetActive(true);
-            }
-            else
-            {
-                //Debug.Log(randomCubeLight.name + " " + randNum + " is already on.");
-            }
-        }
-    }
-
     void TurnOffGameComponentsOnstart()
     {
         gameTimer.enabled = false;
         rndCubeGenerator.enabled = false;
     }
 
+    // Begining of the game sequences.
     IEnumerator TurnOffCubeLightsSlowly()
     {
-        foreach(GameObject cube in cubeLightArray)
+        foreach(GameObject cube in rndCubeGenerator.cubeLightArray)
         {
             cube.SetActive(false);
             yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
@@ -71,8 +50,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator TurnOnCubeLightsSlowly()
     {
-        System.Array.Reverse(cubeLightArray);
-        foreach (GameObject cube in cubeLightArray)
+        System.Array.Reverse(rndCubeGenerator.cubeLightArray);
+        foreach (GameObject cube in rndCubeGenerator.cubeLightArray)
         {
             cube.SetActive(true);
             yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);

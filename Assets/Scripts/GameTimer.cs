@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameTimer : MonoBehaviour
 {
-    [SerializeField] GameController gameController = null;
+    RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] public int countdownTimer = 60;
 
     private void Awake()
     {
-        gameController = GetComponent<GameController>();
+        rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
 
     void Start()
@@ -23,7 +23,7 @@ public class GameTimer : MonoBehaviour
         {
             //Debug.Log(countdownTimer);
             yield return new WaitForSeconds(1f);
-            gameController.TurnRandomCubeLightOn();
+            rndCubeGenerator.TurnRandomCubeLightOn();
             countdownTimer--;
         }
     }
