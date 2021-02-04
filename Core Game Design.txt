@@ -9,6 +9,6 @@ Core Game Loop: Continuously turn off the light in order to gain a high score.
 
 ***Note to self***
 - Try making middle cube less bright (works but not sure if this is the proper solution)
-- Figure out how to make timer and frequency of cube lights different times.
+
 
 

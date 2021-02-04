@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3957043417056263813
+--- !u!1 &7754733146458382296
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3957043417056263814}
-  - component: {fileID: 3957043417056263815}
-  - component: {fileID: 8301994413679563065}
+  - component: {fileID: 7754733146458382299}
+  - component: {fileID: 7754733146458382298}
+  - component: {fileID: 7754733146458382293}
+  - component: {fileID: 7754733146458382292}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &3957043417056263814
+--- !u!4 &7754733146458382299
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957043417056263813}
+  m_GameObject: {fileID: 7754733146458382296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,32 +33,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3957043417056263815
+--- !u!114 &7754733146458382298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957043417056263813}
+  m_GameObject: {fileID: 7754733146458382296}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43b1a6c6a3ad4401bab4c2d65372ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeLightArray: []
-  turnLightsOnOffSlowlyDelay: 1
-  randomDelayTimer: 0.1
-  gameTimer: {fileID: 0}
---- !u!114 &8301994413679563065
+  turnLightsOnOffSlowlyDelay: 0.01
+  totalPoints: 0
+--- !u!114 &7754733146458382293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957043417056263813}
+  m_GameObject: {fileID: 7754733146458382296}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96cfbd494e4d743ce920805757bbb9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: 60
+  countdownTimer: 10
+  timeRemaining: 0
+--- !u!114 &7754733146458382292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754733146458382296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed62e8bb35a77481d8ad8d2510b051b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cubeLightArray: []
+  randomDelayTimer: 0.7

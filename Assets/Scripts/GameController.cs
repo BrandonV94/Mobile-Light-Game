@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("TurnOffCubeLightsSlowly");
+        //StartCoroutine("TurnOffCubeLightsSlowly");
     }
 
     void Update()
@@ -59,9 +60,8 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Score 
-    public void incrementScore(int pointsPerClick)
+    void StartGame()
     {
-        totalPoints += pointsPerClick;
+        SceneManager.LoadScene(1);
     }
 }

@@ -9,15 +9,13 @@ public class ScoreBoard : MonoBehaviour
     GameTimer gameTimer = null;
     [SerializeField] Text scoreText = null;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         gameController = FindObjectOfType<GameController>();
         gameTimer = FindObjectOfType<GameTimer>();
-        scoreText.GetComponent<Text>();
+        scoreText = GetComponentInChildren<Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         DisplayScore();

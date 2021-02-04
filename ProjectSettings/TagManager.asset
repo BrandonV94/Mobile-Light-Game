@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Light Cube
   - Light Source
+  - Main Cube Lights
+  - BG Cube Lights
   layers:
   - Default
   - TransparentFX

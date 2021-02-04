@@ -27,7 +27,7 @@ public class LightCube : MonoBehaviour
         {
             TurnCubeLightOff();
             timeClicked++;
-            gameController.incrementScore(pointsPerClick);
+            incrementScore(pointsPerClick);
         }
     }
 
@@ -53,5 +53,10 @@ public class LightCube : MonoBehaviour
         {
             isLightCubeOn = false;
         }
+    }
+
+    public void incrementScore(int pointsPerClick)
+    {
+        gameController.totalPoints += pointsPerClick;
     }
 }

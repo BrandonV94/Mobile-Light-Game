@@ -1,30 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {
+    Slider timerSlider = null;
     RandomCubeGenerator rndCubeGenerator = null;
-    [SerializeField] public int countdownTimer = 60;
+    [SerializeField] public float countdownTimer = 60f;
+    [SerializeField] float timeRemaining = 0f;
 
     private void Awake()
     {
+        timerSlider = FindObjectOfType<Slider>();
         rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
 
     void Start()
     {
-        StartCoroutine(CountdownTimer());
+        timeRemaining = countdownTimer;
     }
 
-    IEnumerator CountdownTimer()
+    private void Update()
     {
-        while (countdownTimer > 0)
+        timerSlider.value = CalculateSliderValue();
+
+        if(timeRemaining > 0f)
         {
-            //Debug.Log(countdownTimer);
-            yield return new WaitForSeconds(1f);
-            rndCubeGenerator.TurnRandomCubeLightOn();
-            countdownTimer--;
+            timeRemaining -= Time.deltaTime;
         }
+        else
+        {
+            rndCubeGenerator.gameObject.SetActive(false);
+        }
+    }
+
+    float CalculateSliderValue()
+    {
+        return (timeRemaining / countdownTimer);
     }
 }
