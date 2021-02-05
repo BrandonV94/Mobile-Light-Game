@@ -5,14 +5,12 @@ using UnityEngine;
 public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
-    GameController gameController = null;
     [SerializeField] public GameObject[] cubeLightArray = null;
     [SerializeField] float randomDelayTimer = 1f;
 
     private void Awake()
     {
         CreateCubeLightArray();
-        gameController = GetComponent<GameController>();
         gameTimer = GetComponent<GameTimer>();
     }
 

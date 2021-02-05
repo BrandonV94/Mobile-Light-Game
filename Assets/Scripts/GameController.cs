@@ -9,7 +9,9 @@ public class GameController : MonoBehaviour
     GameTimer gameTimer = null;
     RandomCubeGenerator rndCubeGenerator = null;
     ScoreBoard scoreBoard = null;
-    [SerializeField] float turnLightsOnOffSlowlyDelay = 1f;
+    [SerializeField] GameObject gameCanvas = null;
+    [SerializeField] GameObject gameOverCanvas = null;
+    public bool isGameOver = false;
     [SerializeField] public int totalPoints = 0;
 
     private void Awake()
@@ -22,7 +24,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine("TurnOffCubeLightsSlowly");
+        gameCanvas.SetActive(true);
+        gameOverCanvas.SetActive(false);
     }
 
     void Update()
@@ -32,6 +35,13 @@ public class GameController : MonoBehaviour
             gameTimer.enabled = true;
             rndCubeGenerator.enabled = true;
         }
+
+        if (isGameOver == true)
+        {
+            Debug.Log("Switching game canvases.");
+            gameCanvas.SetActive(false);
+            gameOverCanvas.SetActive(true);
+        }
     }
 
     void TurnOffGameComponentsOnstart()
@@ -40,28 +50,22 @@ public class GameController : MonoBehaviour
         rndCubeGenerator.enabled = false;
     }
 
-    // Begining of the game sequences.
-    IEnumerator TurnOffCubeLightsSlowly()
+    public void StartGame()
     {
-        foreach(GameObject cube in rndCubeGenerator.cubeLightArray)
-        {
-            cube.SetActive(false);
-            yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
-        }
+        SceneManager.LoadScene(2);
+    }
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
     }
 
-    IEnumerator TurnOnCubeLightsSlowly()
+    public void LoadMainMenu()
     {
-        System.Array.Reverse(rndCubeGenerator.cubeLightArray);
-        foreach (GameObject cube in rndCubeGenerator.cubeLightArray)
-        {
-            cube.SetActive(true);
-            yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
-        }
+        SceneManager.LoadScene("Main Menu");
     }
 
-    void StartGame()
+    public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

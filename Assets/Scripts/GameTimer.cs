@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {
     Slider timerSlider = null;
+    GameController gameController = null;
     RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] public float countdownTimer = 60f;
     [SerializeField] float timeRemaining = 0f;
@@ -13,6 +14,7 @@ public class GameTimer : MonoBehaviour
     private void Awake()
     {
         timerSlider = FindObjectOfType<Slider>();
+        gameController = FindObjectOfType<GameController>();
         rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
 
@@ -29,9 +31,12 @@ public class GameTimer : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
         }
-        else
+
+        if(timeRemaining <= 0f)
         {
+            Debug.Log("Turning off rndmCubeGen.");
             rndCubeGenerator.gameObject.SetActive(false);
+            //gameController.isGameOver = true;
         }
     }
 

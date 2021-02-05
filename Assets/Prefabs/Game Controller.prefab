@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b1a6c6a3ad4401bab4c2d65372ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnLightsOnOffSlowlyDelay: 0.01
+  gameCanvas: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
+  isGameOver: 0
   totalPoints: 0
 --- !u!114 &7754733146458382293
 MonoBehaviour:
@@ -59,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96cfbd494e4d743ce920805757bbb9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimer: 10
+  countdownTimer: 5
   timeRemaining: 0
 --- !u!114 &7754733146458382292
 MonoBehaviour:

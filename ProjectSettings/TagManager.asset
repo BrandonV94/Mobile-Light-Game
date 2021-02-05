@@ -8,6 +8,7 @@ TagManager:
   - Light Source
   - Main Cube Lights
   - BG Cube Lights
+  - Game Canvas
   layers:
   - Default
   - TransparentFX

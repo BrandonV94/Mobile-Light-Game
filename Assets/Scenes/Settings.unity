@@ -189,7 +189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: Main Menu
 --- !u!222 &24024150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -519,11 +519,6 @@ PrefabInstance:
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
       value: BG Cube Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -547,7 +542,7 @@ GameObject:
   - component: {fileID: 460936758}
   - component: {fileID: 460936757}
   m_Layer: 5
-  m_Name: Main Menu Canvas
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,11 +709,6 @@ PrefabInstance:
       value: Light Cube II (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
       value: BG Cube Lights
@@ -921,7 +911,7 @@ Transform:
   - {fileID: 1343257352}
   - {fileID: 1529514992}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &741350193
 PrefabInstance:
@@ -1003,11 +993,6 @@ PrefabInstance:
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
       value: BG Cube Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1031,7 +1016,7 @@ GameObject:
   - component: {fileID: 992730244}
   - component: {fileID: 992730243}
   m_Layer: 5
-  m_Name: Settings Button
+  m_Name: Main Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,7 +1039,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 341.1, y: -101.9}
+  m_AnchoredPosition: {x: 331.59, y: -101.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992730243
@@ -1101,7 +1086,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 634620574}
-        m_MethodName: LoadSettings
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1248,7 +1233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Turn Off The Lights!
+  m_Text: Settings
 --- !u!222 &1281033467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1335,11 +1320,6 @@ PrefabInstance:
       value: Light Cube II (Left)
       objectReference: {fileID: 0}
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
       value: Main Cube Lights
@@ -1430,11 +1410,6 @@ PrefabInstance:
       value: Light Cube II (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
       value: BG Cube Lights
@@ -1537,11 +1512,6 @@ PrefabInstance:
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
       value: Main Cube Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1632,11 +1602,6 @@ PrefabInstance:
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
       value: BG Cube Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1725,11 +1690,6 @@ PrefabInstance:
       value: Light Cube II (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
       value: BG Cube Lights
@@ -1906,7 +1866,7 @@ Transform:
   - {fileID: 1894773381}
   - {fileID: 459369223}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2132067956
 PrefabInstance:
@@ -1983,11 +1943,6 @@ PrefabInstance:
     - target: {fileID: 4317328400776248320, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_TagString
-      value: Light Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691423286318301258, guid: 16af98815b62044928d766c4cdca6991,
-        type: 3}
-      propertyPath: m_TagString
       value: BG Cube Lights
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1998,72 +1953,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2132067956}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4081683820511653380
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4081683820214497045, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_Name
-      value: Light Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4081683820214497047, guid: 6a3e6b1775f3f4a10aef997aab121f1b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6a3e6b1775f3f4a10aef997aab121f1b, type: 3}
