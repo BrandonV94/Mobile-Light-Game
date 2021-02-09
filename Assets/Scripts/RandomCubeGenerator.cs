@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
+    GameController gameController = null;
     [SerializeField] public GameObject[] cubeLightArray = null;
     [SerializeField] float randomDelayTimer = 1f;
 
@@ -12,6 +13,7 @@ public class RandomCubeGenerator : MonoBehaviour
     {
         CreateCubeLightArray();
         gameTimer = GetComponent<GameTimer>();
+        gameController = GetComponent<GameController>();
     }
 
     void Start()
@@ -19,10 +21,21 @@ public class RandomCubeGenerator : MonoBehaviour
         StartCoroutine(TurnLightsOnRandomly());
     }
 
+    private void Update()
+    {
+        Debug.Log("From RCG: Game Over bool is: " + gameController.isGameOver);
+        if(gameController.isGameOver == true)
+        {
+            Debug.Log("Destory self.");
+            Destroy(GetComponent<RandomCubeGenerator>());
+        }
+    }
+
     IEnumerator TurnLightsOnRandomly()
     {
-        while(gameTimer.countdownTimer > 0)
+        while (gameTimer.countdownTimer > 0)
         {
+            Debug.Log("Turning on random light.");
             TurnRandomCubeLightOn();
             yield return new WaitForSeconds(randomDelayTimer);
         }

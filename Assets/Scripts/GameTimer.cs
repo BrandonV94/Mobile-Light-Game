@@ -34,9 +34,7 @@ public class GameTimer : MonoBehaviour
 
         if(timeRemaining <= 0f)
         {
-            Debug.Log("Turning off rndmCubeGen.");
-            rndCubeGenerator.gameObject.SetActive(false);
-            //gameController.isGameOver = true;
+            gameController.isGameOver = true;
         }
     }
 
