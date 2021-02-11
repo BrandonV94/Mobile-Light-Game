@@ -19,7 +19,7 @@ public class LightController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Current scene is " + SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log("Current scene is " + SceneManager.GetActiveScene().buildIndex);
         if(SceneManager.GetActiveScene().name == "Sandbox")
         {
             StartCoroutine(TurnCubeLightsOffSlowly());

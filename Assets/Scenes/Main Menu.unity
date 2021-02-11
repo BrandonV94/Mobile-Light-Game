@@ -445,6 +445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 671435587}
     m_Modifications:
+    - target: {fileID: 1507696012, guid: 16af98815b62044928d766c4cdca6991, type: 3}
+      propertyPath: isLightCubeOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1293716626325729664, guid: 16af98815b62044928d766c4cdca6991,
         type: 3}
       propertyPath: m_LocalPosition.x

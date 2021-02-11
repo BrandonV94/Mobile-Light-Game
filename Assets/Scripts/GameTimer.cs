@@ -7,7 +7,6 @@ public class GameTimer : MonoBehaviour
 {
     Slider timerSlider = null;
     GameController gameController = null;
-    RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] public float countdownTimer = 60f;
     [SerializeField] float timeRemaining = 0f;
 
@@ -15,7 +14,6 @@ public class GameTimer : MonoBehaviour
     {
         timerSlider = FindObjectOfType<Slider>();
         gameController = FindObjectOfType<GameController>();
-        rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
 
     void Start()

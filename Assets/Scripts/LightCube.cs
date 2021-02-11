@@ -23,7 +23,7 @@ public class LightCube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isLightCubeOn)
+        if (isLightCubeOn && gameController.isGameOver == false)
         {
             TurnCubeLightOff();
             timeClicked++;
