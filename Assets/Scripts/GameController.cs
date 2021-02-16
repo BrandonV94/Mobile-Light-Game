@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Canvas gameCanvas = null;
     [SerializeField] Canvas gameOverCanvas = null;
     public bool isGameOver = false;
+    public bool isGamePaused = false;
     [SerializeField] public int gameCountdownTimer = 0;
     [SerializeField] public int totalPoints = 0;
 
@@ -49,13 +50,13 @@ public class GameController : MonoBehaviour
         rndCubeGenerator.enabled = true;
     }
 
-    private void EnableGameCanvas()
+    public void EnableGameCanvas()
     {
         gameCanvas.enabled = true;
         gameOverCanvas.enabled = false;
     }
 
-    private void EnableGameOverCanvas()
+    public void EnableGameOverCanvas()
     {
         gameCanvas.enabled = false;
         gameOverCanvas.enabled = true;

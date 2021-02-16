@@ -6,6 +6,7 @@ public class LightCube : MonoBehaviour
 {
     GameController gameController = null;
     Light lightSource = null;
+    [SerializeField] AudioSource lightAudioSource = null;
     [SerializeField] public bool isLightCubeOn = true;
     [SerializeField] int timeClicked = 0;
     [SerializeField] public int pointsPerClick = 100;
@@ -14,6 +15,7 @@ public class LightCube : MonoBehaviour
     {
         gameController = FindObjectOfType<GameController>();
         lightSource = GetComponentInChildren<Light>();
+        lightAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -25,7 +27,16 @@ public class LightCube : MonoBehaviour
     {
         if (isLightCubeOn && gameController.isGameOver == false)
         {
+            ProcessCubeClick();
+        }
+    }
+
+    private void ProcessCubeClick()
+    {
+        if(gameController.isGamePaused == false)
+        {
             TurnCubeLightOff();
+            lightAudioSource.Play();
             timeClicked++;
             incrementScore(pointsPerClick);
         }
