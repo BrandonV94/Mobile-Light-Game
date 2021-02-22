@@ -38,7 +38,7 @@ public class LightCube : MonoBehaviour
             TurnCubeLightOff();
             lightAudioSource.Play();
             timeClicked++;
-            incrementScore(pointsPerClick);
+            IncrementScore(pointsPerClick);
         }
     }
 
@@ -66,7 +66,7 @@ public class LightCube : MonoBehaviour
         }
     }
 
-    public void incrementScore(int pointsPerClick)
+    public void IncrementScore(int pointsPerClick)
     {
         gameController.totalPoints += pointsPerClick;
     }
