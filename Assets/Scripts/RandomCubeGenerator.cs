@@ -6,8 +6,10 @@ public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
     GameController gameController = null;
-    [SerializeField] public GameObject[] cubeLightArray = null;
-    [SerializeField] float randomDelayTimer = 1f;
+    [SerializeField] public GameObject[] gameCubeLightArray = null;
+    [SerializeField] float randomCubeTimer = 1f;
+    [SerializeField] float timePassed = 0;
+    [SerializeField] float decrementalValue = .2f;
 
     private void Awake()
     {
@@ -23,36 +25,57 @@ public class RandomCubeGenerator : MonoBehaviour
 
     private void Update()
     {
-        if(gameController.isGameOver == true)
-        {
-            Destroy(GetComponent<RandomCubeGenerator>());
-        }
+        CheckIfGameOver();
+        CalculateTimePassed();
+        IncreaseGeneratorSpeed();
     }
 
     IEnumerator TurnLightsOnRandomly()
     {
-        while (gameTimer.countdownTimer > 0)
+        while (gameTimer.timeRemaining > 0)
         {
             TurnRandomCubeLightOn();
-            yield return new WaitForSeconds(randomDelayTimer);
+            yield return new WaitForSeconds(randomCubeTimer);
         }
     }
 
     void CreateCubeLightArray()
     {
-        cubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
+        gameCubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
     }
 
     public void TurnRandomCubeLightOn()
     {
-        if (cubeLightArray.Length > 0)
+        if (gameCubeLightArray.Length > 0)
         {
-            int randNum = Random.Range(0, cubeLightArray.Length);
-            var randomCubeLight = cubeLightArray[randNum];
+            int randNum = Random.Range(0, gameCubeLightArray.Length);
+            var randomCubeLight = gameCubeLightArray[randNum];
             if (randomCubeLight.activeInHierarchy == false)
             {
                 randomCubeLight.SetActive(true);
             }
+        }
+    }
+
+    void CalculateTimePassed()
+    {
+        timePassed += Time.deltaTime;
+    }
+
+    void IncreaseGeneratorSpeed()
+    {
+        if(timePassed > 20f)
+        {
+            timePassed = 0f;
+            randomCubeTimer -= decrementalValue;
+        }
+    }
+
+    void CheckIfGameOver()
+    {
+        if (gameController.isGameOver == true)
+        {
+            Destroy(GetComponent<RandomCubeGenerator>());
         }
     }
 }

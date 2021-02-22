@@ -650,6 +650,11 @@ PrefabInstance:
       propertyPath: randomDelayTimer
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7754733146458382292, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
+        type: 3}
+      propertyPath: randomCubeTimer
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7754733146458382293, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
         type: 3}
       propertyPath: countdownTimer

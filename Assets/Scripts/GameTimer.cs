@@ -7,8 +7,8 @@ public class GameTimer : MonoBehaviour
 {
     Slider timerSlider = null;
     GameController gameController = null;
-    [SerializeField] public float countdownTimer = 60f;
-    [SerializeField] float timeRemaining = 0f;
+    [SerializeField] float countdownTimer = 60f;
+    [SerializeField] public float timeRemaining = 0f;
 
     private void Awake()
     {
