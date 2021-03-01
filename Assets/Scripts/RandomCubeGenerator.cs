@@ -10,6 +10,7 @@ public class RandomCubeGenerator : MonoBehaviour
     [SerializeField] float randomCubeTimer = 1f;
     [SerializeField] float timePassed = 0;
     [SerializeField] float decrementalValue = .2f;
+    [SerializeField] float changeSpeedTime = 10f;
 
     private void Awake()
     {
@@ -64,7 +65,7 @@ public class RandomCubeGenerator : MonoBehaviour
 
     void IncreaseGeneratorSpeed()
     {
-        if(timePassed > 20f)
+        if(timePassed > changeSpeedTime)
         {
             timePassed = 0f;
             randomCubeTimer -= decrementalValue;

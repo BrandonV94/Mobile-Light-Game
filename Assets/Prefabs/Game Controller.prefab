@@ -48,6 +48,8 @@ MonoBehaviour:
   gameCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
   isGameOver: 0
+  isGamePaused: 0
+  gameCountdownTimer: 5
   totalPoints: 0
 --- !u!114 &7754733146458382293
 MonoBehaviour:
@@ -61,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96cfbd494e4d743ce920805757bbb9ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownTimer: 5
+  countdownTimer: 60
   timeRemaining: 0
 --- !u!114 &7754733146458382292
 MonoBehaviour:
@@ -75,5 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed62e8bb35a77481d8ad8d2510b051b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeLightArray: []
-  randomDelayTimer: 0.7
+  gameCubeLightArray: []
+  randomCubeTimer: 0.7
+  timePassed: 0
+  decrementalValue: 0.1
+  changeSpeedTime: 10
