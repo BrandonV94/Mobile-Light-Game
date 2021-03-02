@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
     GameController gameController = null;
-    [SerializeField] Text scoreText = null;
-    [SerializeField] Text finalScoreText = null;
-    [SerializeField] Text gameCountdownTimer = null;
+    [SerializeField] TextMeshProUGUI scoreText = null;
+    [SerializeField] TextMeshProUGUI gameCountdownTimer = null;
+    [SerializeField] TextMeshProUGUI finalScoreText = null;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class ScoreBoard : MonoBehaviour
 
     void Update()
     {
+        
         DisplayCountDown();
         DisplayScore();
     }
@@ -41,8 +43,11 @@ public class ScoreBoard : MonoBehaviour
     private void GetScoreBoardReferences()
     {
         gameController = FindObjectOfType<GameController>();
-        scoreText = GameObject.Find("Default Game Canvases/Game Canvas/Score").GetComponent<Text>();
-        finalScoreText = GameObject.Find("Default Game Canvases/Game Over Canvas/Final Score Text").GetComponent<Text>();
-        gameCountdownTimer = GameObject.Find("Default Game Canvases/Game Canvas/Game Countdown Timer").GetComponent<Text>();
+        scoreText =
+            GameObject.Find("Default Game Canvases/Game Canvas/Score (TMP)").GetComponent<TextMeshProUGUI>();
+        finalScoreText =
+            GameObject.Find("Default Game Canvases/Game Over Canvas/Final Score Text (TMP)").GetComponent<TextMeshProUGUI>();
+        gameCountdownTimer =
+            GameObject.Find("Default Game Canvases/Game Canvas/Game Countdown Timer (TMP)").GetComponent<TextMeshProUGUI>();
     }
 }
