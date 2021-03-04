@@ -42,7 +42,7 @@ public class SceneController : MonoBehaviour
         Application.Quit();
     }
 
-    // Time dependent methods
+    // Time controlling methods
     public void PauseGame()
     {
         Time.timeScale = 0;

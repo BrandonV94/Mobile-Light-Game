@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
+    [SerializeField] AudioSource audioSource = null;
+
     private void Awake()
     {
         int musicControllerCount = FindObjectsOfType<MusicController>().Length;
@@ -17,5 +19,17 @@ public class MusicController : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefsController.GetMasterVolume();
+    }
+
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 }
