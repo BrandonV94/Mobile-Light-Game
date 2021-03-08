@@ -40,4 +40,9 @@ public class SettingsController : MonoBehaviour
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);
         FindObjectOfType<SceneController>().DelayedStartGame();
     }
+
+    public void SetDefaults()
+    {
+        volumeSlider.value = defaultVolume;
+    }
 }

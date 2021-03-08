@@ -42,6 +42,12 @@ public class SceneController : MonoBehaviour
         Application.Quit();
     }
 
+    public void CloseMessageWindow()
+    {
+        var thankYouMessage = GameObject.FindWithTag("Message");
+        Destroy(thankYouMessage);
+    }
+
     // Time controlling methods
     public void PauseGame()
     {

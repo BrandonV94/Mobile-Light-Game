@@ -9,6 +9,7 @@ TagManager:
   - Main Cube Lights
   - BG Cube Lights
   - Game Canvas
+  - Message
   layers:
   - Default
   - TransparentFX

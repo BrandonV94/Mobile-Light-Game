@@ -81,4 +81,4 @@ MonoBehaviour:
   randomCubeTimer: 0.7
   timePassed: 0
   decrementalValue: 0.1
-  changeSpeedTime: 10
+  changeSpeedTime: 15

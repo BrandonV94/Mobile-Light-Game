@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Super Cube Blod SDF
+  m_Name: Super Cube Bold SDF
   m_EditorClassIdentifier: 
   hashCode: 1413289156
   material: {fileID: 2679238095998363500}
