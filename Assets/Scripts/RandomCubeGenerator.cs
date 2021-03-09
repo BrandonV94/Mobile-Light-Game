@@ -5,7 +5,6 @@ using UnityEngine;
 public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
-    GameController gameController = null;
     [SerializeField] public GameObject[] gameCubeLightArray = null;
     [SerializeField] float randomCubeTimer = 1f;
     [SerializeField] float timePassed = 0;
@@ -16,7 +15,6 @@ public class RandomCubeGenerator : MonoBehaviour
     {
         CreateCubeLightArray();
         gameTimer = GetComponent<GameTimer>();
-        gameController = GetComponent<GameController>();
     }
 
     void Start()
@@ -74,7 +72,7 @@ public class RandomCubeGenerator : MonoBehaviour
 
     void CheckIfGameOver()
     {
-        if (gameController.isGameOver == true)
+        if (GameController.isGameOver == true)
         {
             Destroy(GetComponent<RandomCubeGenerator>());
         }

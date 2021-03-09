@@ -9,8 +9,8 @@ public class GameController : MonoBehaviour
     RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] Canvas gameCanvas = null;
     [SerializeField] Canvas gameOverCanvas = null;
-    public bool isGameOver = false;
-    public bool isGamePaused = false;
+    public static bool isGameOver = false;
+    public static bool isGamePaused = false;
     [SerializeField] public int gameCountdownTimer = 0;
     [SerializeField] public int totalPoints = 0;
 

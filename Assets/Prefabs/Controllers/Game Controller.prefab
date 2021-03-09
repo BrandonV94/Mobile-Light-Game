@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
-  isGameOver: 0
-  isGamePaused: 0
   gameCountdownTimer: 5
   totalPoints: 0
 --- !u!114 &7754733146458382293

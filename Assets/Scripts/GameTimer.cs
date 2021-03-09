@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
-{
+{   // TODO Make game audio go faster as time progresses.
+    //AudioSource gameMusic = null;
     Slider timerSlider = null;
-    GameController gameController = null;
     [SerializeField] float countdownTimer = 60f;
     [SerializeField] public float timeRemaining = 0f;
 
     private void Awake()
     {
         timerSlider = FindObjectOfType<Slider>();
-        gameController = FindObjectOfType<GameController>();
+        //gameMusic = FindObjectOfType<AudioSource>();
     }
 
     void Start()
@@ -23,7 +23,7 @@ public class GameTimer : MonoBehaviour
 
     private void Update()
     {
-        timerSlider.value = CalculateSliderValue();
+        ManipulateSlider();
 
         if(timeRemaining > 0f)
         {
@@ -32,12 +32,33 @@ public class GameTimer : MonoBehaviour
 
         if(timeRemaining <= 0f)
         {
-            gameController.isGameOver = true;
+            GameController.isGameOver = true;
         }
+    }
+
+    void ManipulateSlider()
+    {
+        CalculateSliderValue();
+        ChangeSliderColor();
     }
 
     float CalculateSliderValue()
     {
         return (timeRemaining / countdownTimer);
+    }
+
+    void ChangeSliderColor()
+    {
+        if(timeRemaining <= 30f)
+        {
+            // Change the color of the slider fill area to orange.
+            timerSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new Color(255f,145f,0);
+        }
+
+        if (timeRemaining <= 10f)
+        {
+            // Change the color of the slider fill area to red.
+            timerSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new Color(255f, 0f, 0);
+        }
     }
 }

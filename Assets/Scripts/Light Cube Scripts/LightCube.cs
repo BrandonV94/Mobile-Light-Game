@@ -8,7 +8,6 @@ public class LightCube : MonoBehaviour
     Light lightSource = null;
     [SerializeField] AudioSource lightAudioSource = null;
     [SerializeField] public bool isLightCubeOn = true;
-    [SerializeField] int timeClicked = 0;
     [SerializeField] public int pointsPerClick = 100;
 
     void Awake()
@@ -25,7 +24,7 @@ public class LightCube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isLightCubeOn && gameController.isGameOver == false)
+        if (isLightCubeOn && GameController.isGameOver == false)
         {
             ProcessCubeClick();
         }
@@ -33,11 +32,10 @@ public class LightCube : MonoBehaviour
 
     private void ProcessCubeClick()
     {
-        if(gameController.isGamePaused == false)
+        if(GameController.isGamePaused == false)
         {
             TurnCubeLightOff();
             lightAudioSource.Play();
-            timeClicked++;
             IncrementScore(pointsPerClick);
         }
     }

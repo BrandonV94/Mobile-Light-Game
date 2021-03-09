@@ -647,6 +647,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3071320765779001895, guid: 1f45d576fd41f436fa1c1363a22703e7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071320765779001895, guid: 1f45d576fd41f436fa1c1363a22703e7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071320765779001895, guid: 1f45d576fd41f436fa1c1363a22703e7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3071320765832112964, guid: 1f45d576fd41f436fa1c1363a22703e7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -701,6 +716,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7754733146458382293, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
+        type: 3}
+      propertyPath: countdownTimer
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7754733146458382296, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
         type: 3}
       propertyPath: m_Name
@@ -716,6 +736,11 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1296236091}
+    - target: {fileID: 7754733146458382298, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
+        type: 3}
+      propertyPath: isGamePaused
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7754733146458382299, guid: 0ffe7b14d55f04302928fbeb1d798dc1,
         type: 3}
       propertyPath: m_LocalPosition.x

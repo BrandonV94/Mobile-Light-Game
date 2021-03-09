@@ -52,14 +52,14 @@ public class SceneController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        gameController.isGamePaused = true;
+        GameController.isGamePaused = true;
         gameController.EnableGameOverCanvas();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        gameController.isGamePaused = false;
+        GameController.isGamePaused = false;
         gameController.EnableGameCanvas();
     }
 
