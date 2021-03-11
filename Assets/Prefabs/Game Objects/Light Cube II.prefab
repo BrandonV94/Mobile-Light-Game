@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 1293315986951979319}
   - component: {fileID: 5651397788987818010}
   - component: {fileID: 1507696012}
+  - component: {fileID: 4329300200668927146}
   m_Layer: 0
   m_Name: Light Cube II
   m_TagString: Light Cube
@@ -252,8 +253,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightAudioSource: {fileID: 0}
   isLightCubeOn: 0
-  timeClicked: 0
   pointsPerClick: 100
+--- !u!114 &4329300200668927146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317328400776248320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4974c26d476c4069a3ea4c426ee062a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 5651397788987818010}
 --- !u!1 &4691423286318301258
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {   // TODO Make game audio go faster as time progresses.
     //AudioSource gameMusic = null;
-    Slider timerSlider = null;
+    [SerializeField] Slider timerSlider = null;
     [SerializeField] float countdownTimer = 60f;
     [SerializeField] public float timeRemaining = 0f;
 
@@ -38,7 +38,7 @@ public class GameTimer : MonoBehaviour
 
     void ManipulateSlider()
     {
-        CalculateSliderValue();
+        timerSlider.value = CalculateSliderValue();
         ChangeSliderColor();
     }
 
@@ -52,7 +52,8 @@ public class GameTimer : MonoBehaviour
         if(timeRemaining <= 30f)
         {
             // Change the color of the slider fill area to orange.
-            timerSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new Color(255f,145f,0);
+            // TODO Try using Color.Lerp for the color changing effect.
+            timerSlider.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color = new Color(255f,120f,0);
         }
 
         if (timeRemaining <= 10f)

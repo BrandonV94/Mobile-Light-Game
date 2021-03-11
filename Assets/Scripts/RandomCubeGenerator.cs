@@ -77,4 +77,9 @@ public class RandomCubeGenerator : MonoBehaviour
             Destroy(GetComponent<RandomCubeGenerator>());
         }
     }
+
+    public float SetCubeGeneratorTimer(float value)
+    {
+        return randomCubeTimer = value;
+    }
 }

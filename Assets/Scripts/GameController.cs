@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -46,14 +47,28 @@ public class GameController : MonoBehaviour
     }
     private void EnableGameComponents()
     {
-        gameTimer.enabled = true;
-        rndCubeGenerator.enabled = true;
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            gameTimer.enabled = true;
+            rndCubeGenerator.enabled = true;
+        }
+        else
+        {
+            Debug.Log("This is not the game scene.");
+        }  
     }
 
     public void EnableGameCanvas()
     {
-        gameCanvas.enabled = true;
-        gameOverCanvas.enabled = false;
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            gameCanvas.enabled = true;
+            gameOverCanvas.enabled = false;
+        }
+        else
+        {
+            Debug.Log("This is not the game scene.");
+        }
     }
 
     public void EnableGameOverCanvas()

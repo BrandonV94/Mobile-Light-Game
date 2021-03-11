@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
-
+    RandomCubeGenerator randomCubeGenerator = null;
     [SerializeField] public Slider volumeSlider = null;
-    [SerializeField] float defaultVolume = .4f;
+    [SerializeField] const float defaultVolume = .4f;
 
     void Start()
     {
+        randomCubeGenerator = FindObjectOfType<RandomCubeGenerator>();
         volumeSlider.value = PlayerPrefsController.GetMasterVolume();
-
     }
 
     void Update()
@@ -35,14 +35,24 @@ public class SettingsController : MonoBehaviour
         FindObjectOfType<SceneController>().DelayedLoadMainMenu();
     }
 
-    public void SaveAndPlayGame()
-    {
-        PlayerPrefsController.SetMasterVolume(volumeSlider.value);
-        FindObjectOfType<SceneController>().DelayedStartGame();
-    }
-
     public void SetDefaults()
     {
         volumeSlider.value = defaultVolume;
+    }
+
+    // Difficulty Settings
+    public void SetEasyMode()
+    {
+        randomCubeGenerator.SetCubeGeneratorTimer(.8f);
+    }
+
+    public void SetMediumMode()
+    {
+        randomCubeGenerator.SetCubeGeneratorTimer(.7f);
+    }
+
+    public void SetHardMode()
+    {
+        randomCubeGenerator.SetCubeGeneratorTimer(.6f);
     }
 }

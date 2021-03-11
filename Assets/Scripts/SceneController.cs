@@ -22,6 +22,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadSettings()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Settings");
     }
 
