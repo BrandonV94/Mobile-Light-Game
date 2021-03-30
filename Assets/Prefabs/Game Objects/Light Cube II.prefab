@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e957bd39b25f42e596a748acc99eef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightAudioSource: {fileID: 0}
+  lightAudioSource: {fileID: 5651397788987818010}
   isLightCubeOn: 0
   pointsPerClick: 100
 --- !u!114 &4329300200668927146

@@ -17,12 +17,9 @@ public class LightController : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    void Update()
+    void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Game")
-        {
-            StartCoroutine(TurnCubeLightsOffSlowly());
-        }
+        StartCoroutine(TurnCubeLightsOffSlowly());   
     }
 
     private void FindAllCubesInScene()
