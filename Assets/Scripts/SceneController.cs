@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    GameController gameController = null;
+    [SerializeField] GameController gameController = null;
     [SerializeField] float transitionDelay = 1f;
 
-    private void Awake()
+    private void Update()
     {
-        gameController = FindObjectOfType<GameController>();
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            gameController = FindObjectOfType<GameController>();
+        }
     }
 
     // Scene loading mehtods
@@ -23,13 +26,13 @@ public class SceneController : MonoBehaviour
     public void LoadSettings()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMainMenu()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(0);
     }
 
     public void RestartGame()

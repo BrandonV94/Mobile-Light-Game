@@ -16,5 +16,4 @@ Core Game Loop: Continuously turn off the light in order to gain a high score.
 - Turn off the lights as fast as possible
 - Keep the lights off.
 
-
-
+Immediate Issues to Resolve.

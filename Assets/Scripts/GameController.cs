@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -52,10 +51,6 @@ public class GameController : MonoBehaviour
             gameTimer.enabled = true;
             rndCubeGenerator.enabled = true;
         }
-        else
-        {
-            Debug.Log("This is not the game scene.");
-        }  
     }
 
     public void EnableGameCanvas()
@@ -64,10 +59,6 @@ public class GameController : MonoBehaviour
         {
             gameCanvas.enabled = true;
             gameOverCanvas.enabled = false;
-        }
-        else
-        {
-            Debug.Log("This is not the game scene.");
         }
     }
 

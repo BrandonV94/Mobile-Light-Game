@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {   // TODO Make game audio go faster as time progresses.
-    //AudioSource gameMusic = null;
     [SerializeField] Slider timerSlider = null;
     [SerializeField] float countdownTimer = 60f;
     [SerializeField] public float timeRemaining = 0f;
@@ -13,7 +12,6 @@ public class GameTimer : MonoBehaviour
     private void Awake()
     {
         timerSlider = FindObjectOfType<Slider>();
-        //gameMusic = FindObjectOfType<AudioSource>();
     }
 
     void Start()

@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
-    GameController gameController = null;
+    [SerializeField] GameController gameController = null;
     [SerializeField] TextMeshProUGUI scoreText = null;
     [SerializeField] TextMeshProUGUI gameCountdownTimer = null;
     [SerializeField] TextMeshProUGUI finalScoreText = null;
@@ -18,7 +18,6 @@ public class ScoreBoard : MonoBehaviour
 
     void Update()
     {
-        
         DisplayCountDown();
         DisplayScore();
     }
@@ -42,7 +41,7 @@ public class ScoreBoard : MonoBehaviour
 
     private void GetScoreBoardReferences()
     {
-        gameController = FindObjectOfType<GameController>();
+        gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
         scoreText =
             GameObject.Find("Default Game Canvases/Game Canvas/Score (TMP)").GetComponent<TextMeshProUGUI>();
         finalScoreText =

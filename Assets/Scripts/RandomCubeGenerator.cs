@@ -19,6 +19,7 @@ public class RandomCubeGenerator : MonoBehaviour
 
     void Start()
     {
+        SetCubeGeneratorTimer();
         StartCoroutine(TurnLightsOnRandomly());
     }
 
@@ -78,8 +79,9 @@ public class RandomCubeGenerator : MonoBehaviour
         }
     }
 
-    public float SetCubeGeneratorTimer(float value)
+    public void SetCubeGeneratorTimer()
     {
-        return randomCubeTimer = value;
+        //return randomCubeTimer = value;
+        randomCubeTimer = PlayerPrefsController.GetDifficultySetting();
     }
 }

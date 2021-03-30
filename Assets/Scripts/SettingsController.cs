@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
+    PlayerPrefsController playerPrefsController = null;
     RandomCubeGenerator randomCubeGenerator = null;
     [SerializeField] public Slider volumeSlider = null;
-    [SerializeField] const float defaultVolume = .4f;
+    [SerializeField] const float defaultVolume = .5f;
 
     void Start()
     {
+        playerPrefsController = FindObjectOfType<PlayerPrefsController>();
         randomCubeGenerator = FindObjectOfType<RandomCubeGenerator>();
         volumeSlider.value = PlayerPrefsController.GetMasterVolume();
     }
@@ -43,16 +45,22 @@ public class SettingsController : MonoBehaviour
     // Difficulty Settings
     public void SetEasyMode()
     {
-        randomCubeGenerator.SetCubeGeneratorTimer(.8f);
+        //randomCubeGenerator.SetCubeGeneratorTimer(.8f);
+        Debug.Log("The timer has been set to .8");
+        PlayerPrefsController.SetDifficultySetting(.8f);
     }
 
     public void SetMediumMode()
     {
-        randomCubeGenerator.SetCubeGeneratorTimer(.7f);
+        //randomCubeGenerator.SetCubeGeneratorTimer(.7f);
+        Debug.Log("The timer has been set to .7");
+        PlayerPrefsController.SetDifficultySetting(.7f);
     }
 
     public void SetHardMode()
     {
-        randomCubeGenerator.SetCubeGeneratorTimer(.6f);
+        //randomCubeGenerator.SetCubeGeneratorTimer(.6f);
+        Debug.Log("The timer has been set to .6");
+        PlayerPrefsController.SetDifficultySetting(.6f);
     }
 }

@@ -6,6 +6,7 @@ public class PlayerPrefsController : MonoBehaviour
 {
     const string MASTER_VOLUME_KEY = "master volume";
     const string DEFAULT_MASTER_VOLUME_KEY = "default volume";
+    const string DIFFICULTY_SETTING_KEY = "difficulty_setting";
 
 
     const float MIN_VOLUME = 0f;
@@ -26,5 +27,15 @@ public class PlayerPrefsController : MonoBehaviour
     public static float GetMasterVolume()
     {
         return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
+    }
+
+    public static void SetDifficultySetting(float setting)
+    {
+        PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, setting);
+    }
+
+    public static float GetDifficultySetting()
+    {
+        return PlayerPrefs.GetFloat(DIFFICULTY_SETTING_KEY);
     }
 }
