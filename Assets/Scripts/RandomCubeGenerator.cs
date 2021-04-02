@@ -52,7 +52,6 @@ public class RandomCubeGenerator : MonoBehaviour
             var randomCubeLight = gameCubeLightArray[randNum];
             if (randomCubeLight.activeInHierarchy == false)
             {
-                Debug.Log("Activating " + randomCubeLight.transform.parent.name);
                 randomCubeLight.SetActive(true);
             }
         }
@@ -82,7 +81,6 @@ public class RandomCubeGenerator : MonoBehaviour
 
     public void SetCubeGeneratorTimer()
     {
-        //return randomCubeTimer = value;
         randomCubeTimer = PlayerPrefsController.GetDifficultySetting();
     }
 }

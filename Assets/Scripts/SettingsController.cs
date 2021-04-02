@@ -5,15 +5,29 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
+    // Necessary class variables
     PlayerPrefsController playerPrefsController = null;
     RandomCubeGenerator randomCubeGenerator = null;
+    DifficultyController difficultyController;
+
+    // Volume Settings
+    [Header("Volume Settings")]
     [SerializeField] public Slider volumeSlider = null;
     [SerializeField] const float defaultVolume = .5f;
+
+    // Speed Settings
+    [Header("Difficulty Speed Settings")]
+    [SerializeField] float easySpeed = .8f;
+    [SerializeField] float mediumSpeed = .7f;
+    [SerializeField] float hardSpeed = .6f;
+
+
 
     void Start()
     {
         playerPrefsController = FindObjectOfType<PlayerPrefsController>();
         randomCubeGenerator = FindObjectOfType<RandomCubeGenerator>();
+        difficultyController = FindObjectOfType<DifficultyController>();
         volumeSlider.value = PlayerPrefsController.GetMasterVolume();
     }
 
@@ -30,7 +44,7 @@ public class SettingsController : MonoBehaviour
         }
     }
 
-    //Setting menu methods
+    // Setting menu methods
     public void SaveAndMainMenu()
     {
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);
@@ -45,22 +59,19 @@ public class SettingsController : MonoBehaviour
     // Difficulty Settings
     public void SetEasyMode()
     {
-        //randomCubeGenerator.SetCubeGeneratorTimer(.8f);
         Debug.Log("The timer has been set to .8");
-        PlayerPrefsController.SetDifficultySetting(.8f);
+        PlayerPrefsController.SetDifficultySetting(easySpeed);
     }
 
     public void SetMediumMode()
     {
-        //randomCubeGenerator.SetCubeGeneratorTimer(.7f);
         Debug.Log("The timer has been set to .7");
-        PlayerPrefsController.SetDifficultySetting(.7f);
+        PlayerPrefsController.SetDifficultySetting(mediumSpeed);
     }
 
     public void SetHardMode()
     {
-        //randomCubeGenerator.SetCubeGeneratorTimer(.6f);
         Debug.Log("The timer has been set to .6");
-        PlayerPrefsController.SetDifficultySetting(.6f);
+        PlayerPrefsController.SetDifficultySetting(hardSpeed);
     }
 }
