@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [Header("Initialized Game Objects")]
     GameTimer gameTimer = null;
     RandomCubeGenerator rndCubeGenerator = null;
     [SerializeField] Canvas gameCanvas = null;
     [SerializeField] Canvas gameOverCanvas = null;
+
+    [Header("Game States")]
     public static bool isGameOver = false;
     public static bool isGamePaused = false;
+
+    [Header("Game Mechanics")]
     [SerializeField] public int gameCountdownTimer = 0;
     [SerializeField] public int totalPoints = 0;
 

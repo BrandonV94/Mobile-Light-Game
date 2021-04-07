@@ -17,9 +17,9 @@ public class SettingsController : MonoBehaviour
 
     // Speed Settings
     [Header("Difficulty Speed Settings")]
-    [SerializeField] float easySpeed = .8f;
-    [SerializeField] float mediumSpeed = .7f;
-    [SerializeField] float hardSpeed = .6f;
+    [SerializeField] public float easySpeed = .8f;
+    [SerializeField] public float mediumSpeed = .7f;
+    [SerializeField] public float hardSpeed = .6f;
 
 
 
@@ -54,24 +54,25 @@ public class SettingsController : MonoBehaviour
     public void SetDefaults()
     {
         volumeSlider.value = defaultVolume;
+        PlayerPrefsController.SetDifficultySetting(mediumSpeed);
     }
 
     // Difficulty Settings
     public void SetEasyMode()
     {
-        Debug.Log("The timer has been set to .8");
+        Debug.Log("The timer has been set to " + easySpeed);
         PlayerPrefsController.SetDifficultySetting(easySpeed);
     }
 
     public void SetMediumMode()
     {
-        Debug.Log("The timer has been set to .7");
+        Debug.Log("The timer has been set to " + mediumSpeed);
         PlayerPrefsController.SetDifficultySetting(mediumSpeed);
     }
 
     public void SetHardMode()
     {
-        Debug.Log("The timer has been set to .6");
+        Debug.Log("The timer has been set to " + hardSpeed);
         PlayerPrefsController.SetDifficultySetting(hardSpeed);
     }
 }

@@ -5,11 +5,14 @@ using UnityEngine;
 public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
+    [Header("Random Cube Generator Mechanics")]
     [SerializeField] public GameObject[] gameCubeLightArray = null;
+    [Tooltip("Value for how long between random cube selection.")]
     [SerializeField] float randomCubeTimer = 1f;
-    [SerializeField] float timePassed = 0;
     [SerializeField] float decrementalValue = .2f;
     [SerializeField] float changeSpeedTime = 10f;
+    [SerializeField] float timePassed = 0;
+
 
     private void Awake()
     {
