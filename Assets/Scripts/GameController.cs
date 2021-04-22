@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
 
     [Header("Game Mechanics")]
     [SerializeField] public int gameCountdownTimer = 0;
+    [SerializeField] float gameOverDelay = 5f;
     [SerializeField] public int totalPoints = 0;
 
     private void Awake()
@@ -36,7 +37,7 @@ public class GameController : MonoBehaviour
     {
         if (isGameOver == true)
         {
-            EnableGameOverCanvas();
+            Invoke(nameof(EnableGameOverCanvas), gameOverDelay);
         }
     }
 

@@ -1,25 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LightCube : MonoBehaviour
 {
-    GameController gameController = null;
+    GameController gameControllerScript = null;
+
     Light lightSource = null;
+    TextMeshProUGUI pointDeductionText = null;
     [SerializeField] AudioSource lightAudioSource = null;
+
     [SerializeField] public bool isLightCubeOn = true;
     [SerializeField] public int pointsPerClick = 100;
+    [SerializeField] int deductionPoints = 100;
+    [SerializeField] float deductionDelay = 1f;
 
     void Awake()
     {
-        gameController = FindObjectOfType<GameController>();
-        lightSource = GetComponentInChildren<Light>();
-        lightAudioSource = GetComponent<AudioSource>();
+        Application.targetFrameRate = 60;
+        GetComponentsAndScripts();
+    }
+
+    private void Start()
+    {
+        pointDeductionText.enabled = false;
     }
 
     void Update()
     {
         CheckCubeLight();
+        CheckIfPointsShouldBeDeducted();
     }
 
     private void OnMouseDown()
@@ -66,6 +77,33 @@ public class LightCube : MonoBehaviour
 
     public void IncrementScore(int pointsPerClick)
     {
-        gameController.totalPoints += pointsPerClick;
+        gameControllerScript.totalPoints += pointsPerClick;
+    }
+
+    void CheckIfPointsShouldBeDeducted()
+    {
+        if (GameController.isGameOver == true && isLightCubeOn == true)
+        {
+            pointDeductionText.enabled = true;
+            Invoke(nameof(DeductPointsForLight), deductionDelay);
+            Debug.Log("Points should be deducted accordingly.");
+
+            Destroy(this, .5f);
+        }
+    }
+
+    void DeductPointsForLight()
+    {
+        gameControllerScript.totalPoints -= deductionPoints;
+        Debug.Log("Points have been deducted.");
+
+    }
+
+    private void GetComponentsAndScripts()
+    {
+        gameControllerScript = FindObjectOfType<GameController>();
+        lightSource = GetComponentInChildren<Light>();
+        lightAudioSource = GetComponent<AudioSource>();
+        pointDeductionText = GetComponentInChildren<TextMeshProUGUI>();
     }
 }

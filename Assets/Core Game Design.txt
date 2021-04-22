@@ -17,4 +17,4 @@ Core Game Loop: Continuously turn off the light in order to gain a high score.
 - Keep the lights off.
 
 Immediate Issues to Resolve.
-- Difficulty setting selector doesn't stay on the button it is currently set to.
+- Make deduction text pop up easier.
