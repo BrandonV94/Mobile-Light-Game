@@ -7,7 +7,7 @@ public class ScoreBoard : MonoBehaviour
 {
     [SerializeField] GameController gameController = null;
     [SerializeField] TextMeshProUGUI scoreText = null;
-    [SerializeField] TextMeshProUGUI gameCountdownTimer = null;
+    [SerializeField] TextMeshProUGUI gameStartCountdownTimer = null;
     [SerializeField] TextMeshProUGUI finalScoreText = null;
 
     private void Awake()
@@ -30,11 +30,11 @@ public class ScoreBoard : MonoBehaviour
 
     void DisplayCountDown()
     {
-        gameCountdownTimer.text = gameController.gameCountdownTimer.ToString();
+        gameStartCountdownTimer.text = gameController.gameCountdownTimer.ToString();
 
         if(gameController.gameCountdownTimer == 0)
         {
-            gameCountdownTimer.enabled = false;
+            gameStartCountdownTimer.enabled = false;
         }
     }
 
@@ -45,7 +45,7 @@ public class ScoreBoard : MonoBehaviour
             GameObject.Find("Default Game Canvases/Game Canvas/Score (TMP)").GetComponent<TextMeshProUGUI>();
         finalScoreText =
             GameObject.Find("Default Game Canvases/Game Over Canvas/Final Score Text (TMP)").GetComponent<TextMeshProUGUI>();
-        gameCountdownTimer =
+        gameStartCountdownTimer =
             GameObject.Find("Default Game Canvases/Game Canvas/Game Countdown Timer (TMP)").GetComponent<TextMeshProUGUI>();
     }
 }

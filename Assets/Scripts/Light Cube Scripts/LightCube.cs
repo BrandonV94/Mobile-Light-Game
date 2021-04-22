@@ -18,7 +18,6 @@ public class LightCube : MonoBehaviour
 
     void Awake()
     {
-        Application.targetFrameRate = 60;
         GetComponentsAndScripts();
     }
 
@@ -85,10 +84,10 @@ public class LightCube : MonoBehaviour
         if (GameController.isGameOver == true && isLightCubeOn == true)
         {
             pointDeductionText.enabled = true;
-            Invoke(nameof(DeductPointsForLight), deductionDelay);
+            DeductPointsForLight();
             Debug.Log("Points should be deducted accordingly.");
 
-            Destroy(this, .5f);
+            Destroy(this);
         }
     }
 
@@ -96,7 +95,6 @@ public class LightCube : MonoBehaviour
     {
         gameControllerScript.totalPoints -= deductionPoints;
         Debug.Log("Points have been deducted.");
-
     }
 
     private void GetComponentsAndScripts()

@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         gameTimer = GetComponent<GameTimer>();
         rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
