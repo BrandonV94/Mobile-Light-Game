@@ -397,6 +397,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 176002633298965779, guid: 96c03df9e520d4bf99676dd286ae8372,
+        type: 3}
+      propertyPath: m_Name
+      value: Light Cube II (Settings)
+      objectReference: {fileID: 0}
+    - target: {fileID: 176002633451668987, guid: 96c03df9e520d4bf99676dd286ae8372,
+        type: 3}
+      propertyPath: m_Name
+      value: Light Cube II (Start)
+      objectReference: {fileID: 0}
     - target: {fileID: 4151037068485036478, guid: 96c03df9e520d4bf99676dd286ae8372,
         type: 3}
       propertyPath: m_Name
