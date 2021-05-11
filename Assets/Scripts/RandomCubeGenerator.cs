@@ -5,6 +5,8 @@ using UnityEngine;
 public class RandomCubeGenerator : MonoBehaviour
 {
     GameTimer gameTimer = null;
+    GameController gameController = null;
+
     [Header("Random Cube Generator Mechanics")]
     [SerializeField] public GameObject[] gameCubeLightArray = null;
     [Tooltip("Value for how long between random cube selection.")]
@@ -18,6 +20,7 @@ public class RandomCubeGenerator : MonoBehaviour
     {
         CreateCubeLightArray();
         gameTimer = GetComponent<GameTimer>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     void Start()
@@ -76,7 +79,7 @@ public class RandomCubeGenerator : MonoBehaviour
 
     void CheckIfGameOver()
     {
-        if (GameController.isGameOver == true)
+        if (gameController.isGameOver == true)
         {
             Destroy(GetComponent<RandomCubeGenerator>());
         }

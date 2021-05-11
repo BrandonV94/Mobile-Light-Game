@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {   // TODO Make game audio go faster as time progresses.
+    GameController gameController = null;
     [SerializeField] Slider timerSlider = null;
     [SerializeField] float gameCountdownTimer = 60f;
     [SerializeField] public float timeRemaining = 0f;
@@ -12,6 +13,7 @@ public class GameTimer : MonoBehaviour
     private void Awake()
     {
         timerSlider = FindObjectOfType<Slider>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     void Start()
@@ -30,7 +32,7 @@ public class GameTimer : MonoBehaviour
 
         if(timeRemaining <= 0f)
         {
-            GameController.isGameOver = true;
+            gameController.isGameOver = true;
         }
     }
 

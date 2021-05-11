@@ -38,7 +38,7 @@ public class SceneController : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Game");
     }
 
     public void QuitGame()
@@ -56,14 +56,14 @@ public class SceneController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        GameController.isGamePaused = true;
+        gameController.isGamePaused = true;
         gameController.EnableGameOverCanvas();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        GameController.isGamePaused = false;
+        gameController.isGamePaused = false;
         gameController.EnableGameCanvas();
     }
 

@@ -100,7 +100,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21.839966}
+  m_AnchoredPosition: {x: 0, y: -21.839844}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3172362953969171117
@@ -496,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3071320764887635540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -867,8 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee431ec4d58c04b53bdd0fe037641b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   scoreText: {fileID: 9157654423233979608}
-  gameCountdownTimer: {fileID: 7107967822943848790}
+  gameStartCountdownTimer: {fileID: 7107967822943848790}
   finalScoreText: {fileID: 8702139561198360623}
 --- !u!1 &3071320765519502836
 GameObject:
@@ -1029,7 +1030,7 @@ GameObject:
   - component: {fileID: 3071320765832112963}
   - component: {fileID: 3071320765832112964}
   m_Layer: 5
-  m_Name: 'Main Menu: Button'
+  m_Name: 'Settings: Button'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1136,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: LoadMainMenu
+        m_MethodName: LoadSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1178,8 +1179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0.30000305, y: 0}
+  m_SizeDelta: {x: -6.83, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3071320766511704309
 GameObject:
@@ -1566,7 +1567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main Menu
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25e9ac8bcae0342d496e53d30324a4d7, type: 2}
   m_sharedMaterial: {fileID: 2492025407984310835, guid: 25e9ac8bcae0342d496e53d30324a4d7,
@@ -1636,10 +1637,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8899960435495186443}
-    characterCount: 9
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -2059,7 +2060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.8498535, y: -6.199951}
+  m_AnchoredPosition: {x: -8.849609, y: -6.2001953}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &8899960436784984686
@@ -2162,17 +2163,17 @@ PrefabInstance:
     - target: {fileID: 9207538661481262282, guid: 0181ebe73f07e40228e0401a95999bd5,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 403
+      value: 399
       objectReference: {fileID: 0}
     - target: {fileID: 9207538661481262282, guid: 0181ebe73f07e40228e0401a95999bd5,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 78
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 9207538661481262282, guid: 0181ebe73f07e40228e0401a95999bd5,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 72
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 9207538661481262282, guid: 0181ebe73f07e40228e0401a95999bd5,
         type: 3}
@@ -2188,6 +2189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thank you message
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661551888394, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Message
       objectReference: {fileID: 0}
     - target: {fileID: 9207538661551888501, guid: 0181ebe73f07e40228e0401a95999bd5,
         type: 3}
@@ -2293,6 +2299,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661726266260, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661726266260, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMessageWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661726266260, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661726266260, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207538661726266260, guid: 0181ebe73f07e40228e0401a95999bd5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0181ebe73f07e40228e0401a95999bd5, type: 3}

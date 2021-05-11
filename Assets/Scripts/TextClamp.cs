@@ -5,7 +5,7 @@ using TMPro;
 
 public class TextClamp : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI clampText;
+    [SerializeField] TextMeshProUGUI clampText = null;
 
     void Update()
     {

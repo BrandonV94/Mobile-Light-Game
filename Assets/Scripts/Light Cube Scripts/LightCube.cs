@@ -5,7 +5,7 @@ using TMPro;
 
 public class LightCube : MonoBehaviour
 {
-    GameController gameControllerScript = null;
+    GameController gameController = null;
 
     Light lightSource = null;
     TextMeshProUGUI pointDeductionText = null;
@@ -14,7 +14,7 @@ public class LightCube : MonoBehaviour
     [SerializeField] public bool isLightCubeOn = true;
     [SerializeField] public int pointsPerClick = 100;
     [SerializeField] int deductionPoints = 100;
-    [SerializeField] float deductionDelay = 1f;
+    //[SerializeField] float deductionDelay = 1f;
 
     void Awake()
     {
@@ -34,7 +34,8 @@ public class LightCube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isLightCubeOn && GameController.isGameOver == false)
+        Debug.Log("Light Cube clicked.");
+        if (isLightCubeOn && gameController.isGameOver == false)
         {
             ProcessCubeClick();
         }
@@ -42,11 +43,12 @@ public class LightCube : MonoBehaviour
 
     private void ProcessCubeClick()
     {
-        if(GameController.isGamePaused == false)
+        if(gameController.isGamePaused == false)
         {
             TurnCubeLightOff();
             lightAudioSource.Play();
             IncrementScore(pointsPerClick);
+            Debug.Log("Light cube should have processed click...");
         }
     }
 
@@ -76,12 +78,12 @@ public class LightCube : MonoBehaviour
 
     public void IncrementScore(int pointsPerClick)
     {
-        gameControllerScript.totalPoints += pointsPerClick;
+        gameController.totalPoints += pointsPerClick;
     }
 
     void CheckIfPointsShouldBeDeducted()
     {
-        if (GameController.isGameOver == true && isLightCubeOn == true)
+        if (gameController.isGameOver == true && isLightCubeOn == true)
         {
             pointDeductionText.enabled = true;
             DeductPointsForLight();
@@ -93,13 +95,13 @@ public class LightCube : MonoBehaviour
 
     void DeductPointsForLight()
     {
-        gameControllerScript.totalPoints -= deductionPoints;
+        gameController.totalPoints -= deductionPoints;
         Debug.Log("Points have been deducted.");
     }
 
     private void GetComponentsAndScripts()
     {
-        gameControllerScript = FindObjectOfType<GameController>();
+        gameController = FindObjectOfType<GameController>();
         lightSource = GetComponentInChildren<Light>();
         lightAudioSource = GetComponent<AudioSource>();
         pointDeductionText = GetComponentInChildren<TextMeshProUGUI>();

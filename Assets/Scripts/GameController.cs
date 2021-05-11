@@ -12,8 +12,8 @@ public class GameController : MonoBehaviour
     [SerializeField] Canvas gameOverCanvas = null;
 
     [Header("Game States")]
-    public static bool isGameOver = false;
-    public static bool isGamePaused = false;
+    [SerializeField] public bool isGameOver = false;
+    [SerializeField] public bool isGamePaused = false;
 
     [Header("Game Mechanics")]
     [SerializeField] public int gameCountdownTimer = 0;
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Game is over " + isGameOver);
         if (isGameOver == true)
         {
             Invoke(nameof(EnableGameOverCanvas), gameOverDelay);
