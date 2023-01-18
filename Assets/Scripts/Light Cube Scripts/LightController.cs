@@ -43,7 +43,7 @@ public class LightController : MonoBehaviour
     {
         bgCubeLightsInScene = GameObject.FindGameObjectsWithTag("BG Cube Lights");
     }
-
+    
     // Begining of the game sequences.
     IEnumerator TurnCubeLightsOffSlowly()
     {
@@ -52,6 +52,7 @@ public class LightController : MonoBehaviour
             cube.SetActive(false);
             yield return new WaitForSeconds(turnLightsOnOffSlowlyDelay);
         }
+        Destroy(gameObject);
     }
 
     IEnumerator TurnCubeLightsOnSlowly()

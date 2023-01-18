@@ -44,7 +44,7 @@ public class SettingsController : MonoBehaviour
         }
     }
 
-    // Setting menu methods
+    // Setting's menu methods
     public void SaveAndMainMenu()
     {
         PlayerPrefsController.SetMasterVolume(volumeSlider.value);

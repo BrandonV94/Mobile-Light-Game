@@ -81,7 +81,7 @@ public class RandomCubeGenerator : MonoBehaviour
     {
         if (gameController.isGameOver == true)
         {
-            Destroy(GetComponent<RandomCubeGenerator>());
+            Destroy(this);
         }
     }
 

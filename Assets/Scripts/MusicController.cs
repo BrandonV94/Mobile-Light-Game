@@ -6,7 +6,7 @@ public class MusicController : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource = null;
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = PlayerPrefsController.GetMasterVolume();

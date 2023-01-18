@@ -34,7 +34,6 @@ public class LightCube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Light Cube clicked.");
         if (isLightCubeOn && gameController.isGameOver == false)
         {
             ProcessCubeClick();
@@ -48,7 +47,6 @@ public class LightCube : MonoBehaviour
             TurnCubeLightOff();
             lightAudioSource.Play();
             IncrementScore(pointsPerClick);
-            Debug.Log("Light cube should have processed click...");
         }
     }
 

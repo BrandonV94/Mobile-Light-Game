@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
     [SerializeField] GameController gameController = null;
     [SerializeField] float transitionDelay = 1f;
 
-    private void Update()
+    private void Start()
     {
         if (SceneManager.GetActiveScene().name == "Game")
         {

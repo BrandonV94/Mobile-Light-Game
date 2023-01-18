@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
         gameTimer = GetComponent<GameTimer>();
         rndCubeGenerator = GetComponent<RandomCubeGenerator>();
     }
@@ -36,7 +35,6 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Game is over " + isGameOver);
         if (isGameOver == true)
         {
             Invoke(nameof(EnableGameOverCanvas), gameOverDelay);
@@ -52,6 +50,7 @@ public class GameController : MonoBehaviour
         }
         EnableGameComponents();
     }
+
     private void EnableGameComponents()
     {
         if (SceneManager.GetActiveScene().name == "Game")
