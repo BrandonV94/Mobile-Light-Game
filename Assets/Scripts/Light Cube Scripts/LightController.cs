@@ -9,7 +9,7 @@ public class LightController : MonoBehaviour
     [SerializeField] GameObject[] bgCubeLightsInScene = null;
     [SerializeField] GameObject[] mainMenuCubeLights = null;
     [SerializeField] int sceneIndex = 0;
-    [SerializeField] float turnLightsOnOffSlowlyDelay = 1f;
+    [SerializeField] float turnLightsOnOffSlowlyDelay = 1f; // .2 works fine
 
     private void Awake()
     {

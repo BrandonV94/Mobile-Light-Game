@@ -8,6 +8,8 @@ public class LightCube : MonoBehaviour
     GameController gameController = null;
 
     Light lightSource = null;
+    public GameObject bulbOn;
+    public GameObject bulbOff;
     TextMeshProUGUI pointDeductionText = null;
     [SerializeField] AudioSource lightAudioSource = null;
 
@@ -67,12 +69,29 @@ public class LightCube : MonoBehaviour
         if (lightSource.gameObject.activeSelf == true)
         {
             isLightCubeOn = true;
+            ToggleBulbs();
         }
         else
         {
             isLightCubeOn = false;
+            ToggleBulbs();
         }
     }
+
+    void ToggleBulbs()
+    {
+        if(isLightCubeOn == true)
+        {
+            bulbOn.SetActive(true);
+            bulbOff.SetActive(false);
+        }
+        else
+        {
+            bulbOn.SetActive(false);
+            bulbOff.SetActive(true);
+        }
+    }
+    
 
     public void IncrementScore(int pointsPerClick)
     {
@@ -103,5 +122,7 @@ public class LightCube : MonoBehaviour
         lightSource = GetComponentInChildren<Light>();
         lightAudioSource = GetComponent<AudioSource>();
         pointDeductionText = GetComponentInChildren<TextMeshProUGUI>();
+        //bulbOff = GameObject.Find("Light Bulb Off");
+        //bulbOn = GameObject.Find("Light Bulb On");
     }
 }
