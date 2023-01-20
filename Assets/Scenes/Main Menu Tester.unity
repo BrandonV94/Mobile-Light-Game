@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 86335a86861d246e19ef09c19176b5f5,
+  m_LightingDataAsset: {fileID: 112000000, guid: 4e9bf1650830db944bf708cadb8c7ab2,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 9a3820bc60aa540178c1b7072c594ebe,
     type: 2}
@@ -451,11 +451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'Quit: Button '
-      objectReference: {fileID: 0}
-    - target: {fileID: 8538702760134075034, guid: 129dd4ece5d3f4d05b97216d890741e6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 129dd4ece5d3f4d05b97216d890741e6, type: 3}

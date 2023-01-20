@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerPrefsController : MonoBehaviour
 {
-    const string MASTER_VOLUME_KEY = "master volume";
-    const string DEFAULT_MASTER_VOLUME_KEY = "default volume";
-    const string DIFFICULTY_SETTING_KEY = "difficulty_setting";
+    [Header("PlayerPrefs Keys")]
+    [SerializeField] const string MASTER_VOLUME_KEY = "master volume";
+    [SerializeField] const string DIFFICULTY_SETTING_KEY = "difficulty_setting";
 
-
+    [Header("Constants")]
     [SerializeField] const float MIN_VOLUME = 0f;
     [SerializeField] const float MAX_VOLUME = 1f;
+    [SerializeField] const float DEFAULT_DIFFICULTY = .7f;
+    [SerializeField] const float DEFAULT_VOLUME = .7f;
 
     // Volume Set and Get 
     public static void SetMasterVolume(float volume)
@@ -21,8 +23,10 @@ public class PlayerPrefsController : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, DEFAULT_VOLUME);
             Debug.LogError("Music volume is out of range.");
         }
+        PlayerPrefs.Save();
     }
 
     public static float GetMasterVolume()
@@ -33,7 +37,15 @@ public class PlayerPrefsController : MonoBehaviour
     // Difficulty Set and Get
     public static void SetDifficultySetting(float setting)
     {
-        PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, setting);
+        if(setting > 0)
+        {
+            PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, setting);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, DEFAULT_DIFFICULTY);
+        }
+        PlayerPrefs.Save();
     }
 
     public static float GetDifficultySetting()

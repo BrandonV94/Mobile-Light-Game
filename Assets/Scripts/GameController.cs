@@ -60,6 +60,12 @@ public class GameController : MonoBehaviour
         }
     }
 
+    void DisableGameComponents()
+    {
+        gameTimer.enabled = false;
+        rndCubeGenerator.enabled = false;
+    }
+
     public void EnableGameCanvas()
     {
         if (SceneManager.GetActiveScene().name == "Game")
@@ -73,11 +79,5 @@ public class GameController : MonoBehaviour
     {
         gameCanvas.enabled = false;
         gameOverCanvas.enabled = true;
-    }
-
-    void DisableGameComponents()
-    {
-        gameTimer.enabled = false;
-        rndCubeGenerator.enabled = false;
     }
 }

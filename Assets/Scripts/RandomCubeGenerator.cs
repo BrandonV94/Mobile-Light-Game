@@ -10,10 +10,10 @@ public class RandomCubeGenerator : MonoBehaviour
     [Header("Random Cube Generator Mechanics")]
     [SerializeField] public GameObject[] gameCubeLightArray = null;
     [Tooltip("Value for how long between random cube selection.")]
-    [SerializeField] float randomCubeTimer = 1f;
-    [SerializeField] float decrementalValue = .2f;
-    [SerializeField] float changeSpeedTime = 10f;
-    [SerializeField] float timePassed = 0;
+    [SerializeField] public float randomCubeTimer = 1f;
+    [SerializeField] public float decrementalValue = .2f;
+    [SerializeField] public float changeSpeedTime = 10f;
+    [SerializeField] public float timePassed = 0;
 
 
     private void Awake()
@@ -29,7 +29,7 @@ public class RandomCubeGenerator : MonoBehaviour
         StartCoroutine(TurnLightsOnRandomly());
     }
 
-    private void Update()
+    protected void Update()
     {
         CheckIfGameOver();
         CalculateTimePassed();
@@ -50,7 +50,7 @@ public class RandomCubeGenerator : MonoBehaviour
         gameCubeLightArray = GameObject.FindGameObjectsWithTag("Light Source");
     }
 
-    public void TurnRandomCubeLightOn()
+    void TurnRandomCubeLightOn()
     {
         if (gameCubeLightArray.Length > 0)
         {
@@ -85,8 +85,9 @@ public class RandomCubeGenerator : MonoBehaviour
         }
     }
 
-    public void SetCubeGeneratorTimer()
+    void SetCubeGeneratorTimer()
     {
+        Debug.Log("The timer has been set from PlayerPrefs");
         randomCubeTimer = PlayerPrefsController.GetDifficultySetting();
     }
 }
