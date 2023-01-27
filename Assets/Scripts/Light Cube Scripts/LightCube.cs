@@ -16,7 +16,6 @@ public class LightCube : MonoBehaviour
     [SerializeField] public bool isLightCubeOn = true;
     [SerializeField] public int pointsPerClick = 100;
     [SerializeField] int deductionPoints = 100;
-    //[SerializeField] float deductionDelay = 1f;
 
     void Awake()
     {
@@ -36,7 +35,7 @@ public class LightCube : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (isLightCubeOn && gameController.isGameOver == false)
+        if (isLightCubeOn && gameController.isGameOver == false && gameController.gameCountdownTimer == 0)
         {
             ProcessCubeClick();
         }
@@ -104,7 +103,6 @@ public class LightCube : MonoBehaviour
         {
             pointDeductionText.enabled = true;
             DeductPointsForLight();
-            Debug.Log("Points should be deducted accordingly.");
 
             Destroy(this);
         }
@@ -113,7 +111,6 @@ public class LightCube : MonoBehaviour
     void DeductPointsForLight()
     {
         gameController.totalPoints -= deductionPoints;
-        Debug.Log("Points have been deducted.");
     }
 
     private void GetComponentsAndScripts()
@@ -122,7 +119,5 @@ public class LightCube : MonoBehaviour
         lightSource = GetComponentInChildren<Light>();
         lightAudioSource = GetComponent<AudioSource>();
         pointDeductionText = GetComponentInChildren<TextMeshProUGUI>();
-        //bulbOff = GameObject.Find("Light Bulb Off");
-        //bulbOn = GameObject.Find("Light Bulb On");
     }
 }

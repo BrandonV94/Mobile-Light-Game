@@ -12,7 +12,16 @@ public class PlayerPrefsController : MonoBehaviour
     [SerializeField] const float MIN_VOLUME = 0f;
     [SerializeField] const float MAX_VOLUME = 1f;
     [SerializeField] const float DEFAULT_DIFFICULTY = .7f;
-    [SerializeField] const float DEFAULT_VOLUME = .7f;
+    [SerializeField] const float DEFAULT_VOLUME = .5f;
+
+    private void Start()
+    {
+        if(GetMasterVolume() == 0f && GetDifficultySetting() == 0f)
+        {
+            SetMasterVolume(DEFAULT_VOLUME);
+            SetDifficultySetting(DEFAULT_DIFFICULTY);
+        }
+    }
 
     // Volume Set and Get 
     public static void SetMasterVolume(float volume)
@@ -20,13 +29,12 @@ public class PlayerPrefsController : MonoBehaviour
         if(volume >= MIN_VOLUME && volume <= MAX_VOLUME)
         {
             PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
+            PlayerPrefs.Save();
         }
         else
         {
-            PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, DEFAULT_VOLUME);
             Debug.LogError("Music volume is out of range.");
         }
-        PlayerPrefs.Save();
     }
 
     public static float GetMasterVolume()
@@ -37,15 +45,15 @@ public class PlayerPrefsController : MonoBehaviour
     // Difficulty Set and Get
     public static void SetDifficultySetting(float setting)
     {
-        if(setting > 0)
+        if(setting > 0f && setting < 1f)
         {
             PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, setting);
+            PlayerPrefs.Save();
         }
         else
         {
-            PlayerPrefs.SetFloat(DIFFICULTY_SETTING_KEY, DEFAULT_DIFFICULTY);
+            Debug.Log("Difficulty setting out of range.");
         }
-        PlayerPrefs.Save();
     }
 
     public static float GetDifficultySetting()

@@ -35,10 +35,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (isGameOver == true)
-        {
-            Invoke(nameof(EnableGameOverCanvas), gameOverDelay);
-        }
+        if (isGameOver == true) { Invoke(nameof(EnableGameOverCanvas), gameOverDelay); }
     }
 
     IEnumerator BeginCountdown()

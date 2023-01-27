@@ -87,7 +87,6 @@ public class RandomCubeGenerator : MonoBehaviour
 
     void SetCubeGeneratorTimer()
     {
-        Debug.Log("The timer has been set from PlayerPrefs");
         randomCubeTimer = PlayerPrefsController.GetDifficultySetting();
     }
 }

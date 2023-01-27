@@ -18,3 +18,4 @@ Core Game Loop: Continuously turn off the light in order to gain a high score.
 
 Immediate Issues to Resolve.
 - Make deduction text pop up easier.
+- User can turn off lights on the countdown sequence.
